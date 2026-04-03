@@ -6,46 +6,45 @@
 
 units = ("C", "K", "F")
 while True:
-    value = float(input("Enter the temperature value: "))
     try:
+        value = float(input("Enter the temperature value: "))
         unit1 = input("Enter the unit to convert from: ").upper()
         unit2 = input("Enter the unit to convert to: ").upper()
+
+        if unit1 not in units or unit2 not in units:
+            print("Invalid unit, please enter C, K or F")
+        elif unit1 == unit2:
+            print(f"The temperature is already in {unit1}: {value}")
         # From Celsius to kelvin / Celsius to Fahrenheit
-        if unit1 == "C":
+        elif unit1 == "C":
             if unit2 == "K":
                 kelvin = value + 273.15
-                print(kelvin)
+                print(f"The result is {kelvin:.2f} {unit2}")
             elif unit2 == "F":
-                Fahrenheit = (value * 9 / 5) + 32
-                print(Fahrenheit)
-
+                fahrenheit = (value * 9 / 5) + 32
+                print(f"The result is {fahrenheit:.2f} {unit2}")
+        # From Kelvin to Celsius / Kelvin to Fahrenheit
         elif unit1 == "K":
             if unit2 == "C":
-                Celsius = value - 273.15
-                print(Celsius)
+                celsius = value - 273.15
+                print(f"The result is {celsius:.2f} {unit2}")
             elif unit2 == "F":
-                Fahrenheit = (value - 273.15) * 9 / 5 + 32
-                print(Fahrenheit)
-
+                fahrenheit = (value - 273.15) * 9 / 5 + 32
+                print(f"The result is {fahrenheit:.2f} {unit2}")
+        # From Fahrenheit to kelvin / Fahrenheit to Celsius
         elif unit1 == "F":
             if unit2 == "K":
                 kelvin = (value - 32) * 5 / 9 + 273.15
-                print(kelvin)
+                print(f"The result is {kelvin:.2f} {unit2}")
             elif unit2 == "C":
-                Celsius = (value - 32) * 5 / 9
-                print(Celsius)
+                celsius = (value - 32) * 5 / 9
+                print(f"The result is {celsius:.2f} {unit2}")
     except ValueError:
         print("Invalid input, try again")
 
-
-
-
-
-
-
-
-
-
-
+    cont = input("Do you want to continue (y/n): ").lower()
+    if cont == "n":
+        print("Goodbye")
+        break
 
 
