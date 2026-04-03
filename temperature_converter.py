@@ -13,6 +13,7 @@ while True:
 
         if unit1 not in units or unit2 not in units:
             print("Invalid unit, please enter C, K or F")
+
         elif unit1 == unit2:
             print(f"The temperature is already in {unit1}: {value}")
         # From Celsius to kelvin / Celsius to Fahrenheit
@@ -46,5 +47,4 @@ while True:
     if cont == "n":
         print("Goodbye")
         break
-
-
+#The end
