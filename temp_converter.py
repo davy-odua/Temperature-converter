@@ -49,5 +49,10 @@ while True:
     if continuation == "n":
         print("Goodbye")
         break
+
+#MY CALCULATOR
+calculator = "This is my Calculator"
+print(calculator)
+
 #HELLO
 #HELLO
